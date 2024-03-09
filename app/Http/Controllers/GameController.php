@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BoardConfig;
+use App\Models\Property;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 
@@ -31,7 +31,7 @@ class GameController extends BaseController
             $new_position['position'] = $validated['position'] + $random_add;
         }
 
-        $new_position['card'] = BoardConfig::where('location', $new_position['position'])->first();
+        $new_position['card'] = Property::where('location_id', $new_position['position'])->first();
 
         return response()->json($new_position, 200);
     }

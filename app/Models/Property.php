@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BoardConfig extends Model
+class Property extends Model
 {
-    protected $table = 'monopoly_config';
+    protected $table = 'properties';
 }

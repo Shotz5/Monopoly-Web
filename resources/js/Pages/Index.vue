@@ -20,13 +20,21 @@
     import axios from 'axios';
     import { ref } from 'vue';
 
-    const position = ref(0);
+    const MAX_POSITION = 40;
+    const position = ref(1);
     const lastRoll = ref(0);
 
     const rollDice = async () => {
-        const roll = await axios.get('/api/dice-roll');
-        lastRoll.value = roll.data;
-        position.value += roll.data;
+        const roll = await axios.post('/api/new-position', {position: position.value});
+
+        if (roll.data.position < position.value) {
+            lastRoll.value = MAX_POSITION + (roll.data.position - position.value);
+        } else {
+            lastRoll.value = roll.data.position - position.value
+        }
+        position.value = roll.data.position;
+
+        console.log(roll.data);
     }
 
     const props = defineProps({

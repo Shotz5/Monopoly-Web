@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dice-roll', [GameController::class, 'diceRoll']);
+Route::post('/new-position', [GameController::class, 'newPosition']);

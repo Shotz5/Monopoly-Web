@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  php:
+    build: .
+    ports:
+      - "8000:8000"
+      - "5173:5173"
+    volumes:
+      - ".:/app"
+    depends_on: 
+      - "mysql"
+  mysql:
+    image: "mysql:8.3"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  adminer:
+    image: 'adminer'
+    ports:
+      - "8080:8080"

@@ -1,17 +1,22 @@
 <template>
-    <div class="flex justify-center">
-        <Board :boardConfig="props.boardConfig" />
-    </div>
-    <div>
-        <a :onclick.prevent="rollDice">Dice Roll</a>
-    </div>
-    <div>
-        <span>Last Dice Roll: {{ lastRoll }}</span>
+    <div class="flex flex-row m-10">
+        <Board :boardConfig="props.boardConfig" :position="position" />
+        <div class="flex flex-col">
+            <div class="m-2 h-24">
+                <Button :onclick.prevent="rollDice">Dice Roll</Button>
+                <span>Last Dice Roll: {{ lastRoll }}</span>
+            </div>
+            <div class="m-2 h-24">
+                <Button :onclick.prevent="rollDice">Dice Roll</Button>
+                <span>Last Dice Roll: {{ lastRoll }}</span>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup>
     import Board from '../Components/Board.vue';
+    import Button from '../Components/Button.vue';
     import axios from 'axios';
     import { ref } from 'vue';
 

@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-center">
-        <Board :position="position" />
+        <Board :boardConfig="props.boardConfig" />
     </div>
     <div>
         <a :onclick.prevent="rollDice">Dice Roll</a>
@@ -24,7 +24,7 @@
         position.value += roll.data;
     }
 
-    defineProps({
-        
+    const props = defineProps({
+        boardConfig: Object
     });
 </script>

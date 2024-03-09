@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('monopoly_config', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('location', 5);
+            $table->string('name', 255);
+            $table->integer('price')->nullable();
         });
     }
 

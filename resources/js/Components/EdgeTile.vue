@@ -1,13 +1,15 @@
 <template>
-    <div :id="props.tile_id" class="grid grid-rows-4 grid-cols-1">
-        <div :class="props.color"></div>
+    <div :id="props.config.location" class="grid grid-rows-4 grid-cols-1 text-[12px] text-center">
+        <div :class="props.color + (props.color ? ' border-b-2 border-black' : '')"></div>
+        <div class="p-2">{{ props.config.name }}</div>
+        <div class="p-2"></div>
+        <div class="p-2"><s v-if="props.config.price">M</s>{{ props.config.price }}</div>
     </div>
 </template>
 
 <script setup>
     const props = defineProps({
-        tile_id: Number,
-        position: Number,
+        config: Object,
         color: String,
     });
 </script>

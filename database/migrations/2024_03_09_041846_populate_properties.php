@@ -15,7 +15,6 @@ return new class extends Migration
         DB::table('properties')->insert([
             // Bottom
             [
-                'location_id' => 1,
                 'name' => 'Start',
                 'price' => null,
                 'house_cost' => null,
@@ -31,7 +30,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 2,
                 'name' => 'Mediter-ranean Avenue',
                 'price' => 60,
                 'house_cost' => 50,
@@ -47,7 +45,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 3,
                 'name' => 'Community Chest',
                 'price' => null,
                 'house_cost' => null,
@@ -63,7 +60,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 4,
                 'name' => 'Baltic Avenue',
                 'price' => 200,
                 'house_cost' => 50,
@@ -79,7 +75,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 5,
                 'name' => 'Income Tax',
                 'price' => 200,
                 'house_cost' => null,
@@ -95,7 +90,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 6,
                 'name' => 'Reading Railroad',
                 'price' => 200,
                 'house_cost' => null,
@@ -111,7 +105,6 @@ return new class extends Migration
                 'color_group_multiplier' => 1,
             ],
             [
-                'location_id' => 7,
                 'name' => 'Oriental Avenue',
                 'price' => 100,
                 'house_cost' => 50,
@@ -127,7 +120,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 8,
                 'name' => 'Chance',
                 'price' => null,
                 'house_cost' => null,
@@ -143,7 +135,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 9,
                 'name' => 'Vermont Avenue',
                 'price' => 100,
                 'house_cost' => 50,
@@ -159,7 +150,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 10,
                 'name' => 'Connecticut Avenue',
                 'price' => 120,
                 'house_cost' => 50,
@@ -175,7 +165,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 11,
                 'name' => 'In Jail or Visiting',
                 'price' => null,
                 'house_cost' => null,
@@ -192,7 +181,6 @@ return new class extends Migration
             ],
             // Left
             [
-                'location_id' => 12,
                 'name' => 'St. Charles Place',
                 'price' => 140,
                 'house_cost' => 100,
@@ -208,7 +196,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 13,
                 'name' => 'Electric Company',
                 'price' => 150,
                 'house_cost' => null,
@@ -224,7 +211,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 14,
                 'name' => 'States Avenue',
                 'price' => 140,
                 'house_cost' => 100,
@@ -240,7 +226,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 15,
                 'name' => 'Virginia Avenue',
                 'price' => 160,
                 'house_cost' => 100,
@@ -256,7 +241,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 16,
                 'name' => 'Pennsylvania Railroad',
                 'price' => 200,
                 'house_cost' => null,
@@ -272,7 +256,6 @@ return new class extends Migration
                 'color_group_multiplier' => 1,
             ],
             [
-                'location_id' => 17,
                 'name' => 'St. James Place',
                 'price' => 180,
                 'house_cost' => 100,
@@ -288,7 +271,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 18,
                 'name' => 'Community Chest',
                 'price' => null,
                 'house_cost' => null,
@@ -304,7 +286,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 19,
                 'name' => 'Tennessee Avenue',
                 'price' => 180,
                 'house_cost' => 100,
@@ -320,7 +301,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 20,
                 'name' => 'New York Avenue',
                 'price' => 200,
                 'house_cost' => 100,
@@ -337,7 +317,6 @@ return new class extends Migration
             ],
             // Top
             [
-                'location_id' => 21,
                 'name' => 'Free Parking',
                 'price' => null,
                 'house_cost' => null,
@@ -353,7 +332,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 22,
                 'name' => 'Kentucky Avenue',
                 'price' => 220,
                 'house_cost' => 150,
@@ -369,7 +347,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 23,
                 'name' => 'Chance',
                 'price' => null,
                 'house_cost' => null,
@@ -385,7 +362,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 24,
                 'name' => 'Indiana Avenue',
                 'price' => 220,
                 'house_cost' => 150,
@@ -401,7 +377,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 25,
                 'name' => 'Illinois Avenue',
                 'price' => 240,
                 'house_cost' => 150,
@@ -417,7 +392,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 26,
                 'name' => 'B. & O. Railroad',
                 'price' => 200,
                 'house_cost' => null,
@@ -433,7 +407,6 @@ return new class extends Migration
                 'color_group_multiplier' => 1,
             ],
             [
-                'location_id' => 27,
                 'name' => 'Atlantic Avenue',
                 'price' => 260,
                 'house_cost' => 150,
@@ -449,7 +422,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 28,
                 'name' => 'Ventnor Avenue',
                 'price' => 260,
                 'house_cost' => 150,
@@ -465,7 +437,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 29,
                 'name' => 'Water Works',
                 'price' => 150,
                 'house_cost' => null,
@@ -481,7 +452,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 30,
                 'name' => 'Marvin Gardens',
                 'price' => 280,
                 'house_cost' => 150,
@@ -497,7 +467,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 31,
                 'name' => 'Go to Jail',
                 'price' => null,
                 'house_cost' => null,
@@ -514,7 +483,6 @@ return new class extends Migration
             ],
             // Right
             [
-                'location_id' => 32,
                 'name' => 'Pacific Avenue',
                 'price' => 300,
                 'house_cost' => 200,
@@ -530,7 +498,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 33,
                 'name' => 'North Carolina Avenue',
                 'price' => 300,
                 'house_cost' => 200,
@@ -546,7 +513,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 34,
                 'name' => 'Community Chest',
                 'price' => null,
                 'house_cost' => null,
@@ -562,7 +528,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 35,
                 'name' => 'Pennsylvania Avenue',
                 'price' => 320,
                 'house_cost' => 200,
@@ -578,7 +543,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 36,
                 'name' => 'Short Line',
                 'price' => 200,
                 'house_cost' => null,
@@ -594,7 +558,6 @@ return new class extends Migration
                 'color_group_multiplier' => 1,
             ],
             [
-                'location_id' => 37,
                 'name' => 'Chance',
                 'price' => null,
                 'house_cost' => null,
@@ -610,7 +573,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 38,
                 'name' => 'Park Place',
                 'price' => 350,
                 'house_cost' => 200,
@@ -626,7 +588,6 @@ return new class extends Migration
                 'color_group_multiplier' => 2,
             ],
             [
-                'location_id' => 39,
                 'name' => 'Luxury Tax',
                 'price' => 100,
                 'house_cost' => null,
@@ -642,7 +603,6 @@ return new class extends Migration
                 'color_group_multiplier' => null,
             ],
             [
-                'location_id' => 40,
                 'name' => 'Boardwalk',
                 'price' => 400,
                 'house_cost' => 200,

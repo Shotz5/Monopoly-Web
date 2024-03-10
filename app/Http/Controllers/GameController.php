@@ -23,7 +23,7 @@ class GameController extends BaseController
 
         DB::beginTransaction();
 
-        $location_ids = Property::select('id')->get()->pluck('id');
+        $property_ids = Property::select('id')->get()->pluck('id');
 
         $game_id = Game::insertGetId([
             'game_name' => $validated['name'],
@@ -36,10 +36,10 @@ class GameController extends BaseController
             ]);
         }
 
-        foreach ($location_ids as $location_id) {
+        foreach ($property_ids as $property_id) {
             GameProperty::insert([
                 'game_id' => $game_id,
-                'location_id' => $location_id,
+                'property_id' => $property_id,
             ]);
         }
 
@@ -51,7 +51,9 @@ class GameController extends BaseController
     public function getGameState(int $game_id)
     {
         $game_state = Game::where('id', $game_id)
-            ->with(['players', 'game_properties', 'game_properties.property'])->get();
+            ->with(['players', 'game_properties', 'game_properties.property'])
+            ->get()
+            ->first();
 
         return response()->json($game_state);
     }
@@ -76,8 +78,6 @@ class GameController extends BaseController
         {
             $new_position['position'] = $validated['position'] + $random_add;
         }
-
-        $new_position['card'] = Property::where('location_id', $new_position['position'])->first();
 
         return response()->json($new_position, 200);
     }

@@ -19,4 +19,14 @@ class Game extends Model
     {
         return $this->hasMany(GameProperty::class);
     }
+
+    public static function getGameState(int $game_id): self
+    {
+        $game_state = self::where('id', $game_id)
+            ->with(['players', 'game_properties', 'game_properties.property'])
+            ->get()
+            ->first();
+
+        return $game_state;
+    }
 }

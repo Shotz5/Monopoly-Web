@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-row m-10">
-        <Board :boardConfig="props.boardConfig" :position="position" />
+        <Board :gameState="props.gameState" :position="position" />
         <div class="flex flex-col">
             <div class="m-2 h-24">
                 <Button :onclick.prevent="rollDice">Dice Roll</Button>
@@ -21,7 +21,7 @@
     import { ref } from 'vue';
 
     const props = defineProps({
-        boardConfig: Object,
+        gameState: Object,
         gameId: Number,
     });
 

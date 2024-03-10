@@ -13,6 +13,6 @@ class GameProperty extends Model
 
     public function property()
     {
-        return $this->hasOne(Property::class, 'location_id');
+        return $this->hasOne(Property::class, 'id');
     }
 }

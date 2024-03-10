@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->integer('location_id')->unique();
             $table->string('name', 255);
             $table->integer('price')->nullable();
 

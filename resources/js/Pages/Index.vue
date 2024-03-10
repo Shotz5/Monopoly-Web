@@ -20,7 +20,13 @@
     import axios from 'axios';
     import { ref } from 'vue';
 
+    const props = defineProps({
+        boardConfig: Object,
+        gameId: Number,
+    });
+
     const MAX_POSITION = 40;
+    const GAME_ID = props.gameId;
     const position = ref(1);
     const lastRoll = ref(0);
 
@@ -33,11 +39,12 @@
             lastRoll.value = roll.data.position - position.value
         }
         position.value = roll.data.position;
-
-        console.log(roll.data);
     }
 
-    const props = defineProps({
-        boardConfig: Object
-    });
+    const getGameState = async () => {
+        const gameState = await axios.get(`/api/game-state/${GAME_ID}`);
+        console.log(gameState.data);
+    }
+
+    getGameState();
 </script>

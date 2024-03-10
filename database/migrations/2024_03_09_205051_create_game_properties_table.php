@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('player_properties', function (Blueprint $table) {
+        Schema::create('game_properties', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('game_id')->unsigned();
             $table->integer('location_id');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('player_properties');
+        Schema::dropIfExists('game_properties');
     }
 };

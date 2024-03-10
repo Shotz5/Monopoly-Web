@@ -10,6 +10,9 @@ class BoardController extends Controller
 {
     public function index()
     {
-        return inertia('Index', ['boardConfig' => Property::all()->keyBy('location_id')]);
+        return inertia('Index', [
+            'boardConfig' => Property::all()->keyBy('location_id'),
+            'gameId' => 1,
+        ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Player;
+use App\Models\GameProperty;
 
 class Game extends Model
 {
@@ -14,8 +15,8 @@ class Game extends Model
         return $this->hasMany(Player::class);
     }
 
-    public function getGameState(int $game_id)
+    public function game_properties()
     {
-        return self::where('id', $game_id);
+        return $this->hasMany(GameProperty::class);
     }
 }

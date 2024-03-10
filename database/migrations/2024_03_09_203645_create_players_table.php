@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('game_id')->unsigned();
             $table->enum('icon', ['thimble', 'racecar', 'top_hat', 'battleship']);
-            $table->integer('money');
-            $table->boolean('is_in_jail');
-            $table->boolean('is_bankrupt');
+            $table->integer('money')->default(1500);
+            $table->boolean('is_in_jail')->default(false);
+            $table->boolean('is_bankrupt')->default(false);
 
             $table->foreign('game_id')->references('id')->on('games');
         });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use App\Models\Property;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
@@ -9,6 +10,14 @@ use Illuminate\Http\Request;
 class GameController extends BaseController
 {
     private const MAX_POSITION = 40;
+
+    public function getGameState(int $game_id)
+    {
+        $game_state = Game::where('id', $game_id)
+            ->with(['players', 'game_properties', 'game_properties.property'])->get();
+
+        return response()->json($game_state);
+    }
 
     public function newPosition(Request $request)
     {

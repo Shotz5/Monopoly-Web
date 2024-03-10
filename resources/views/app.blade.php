@@ -9,7 +9,7 @@
         @inertiaHead
         <title>Web Monopoly</title>
     </head>
-    <body>
+    <body class="dark:text-white dark:bg-gray-900">
         @inertia
     </body>
 </html>

@@ -3,13 +3,50 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\GameProperty;
+use App\Models\Player;
 use App\Models\Property;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GameController extends BaseController
 {
     private const MAX_POSITION = 40;
+
+    public function createNewGame(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => ['string', 'required', 'max:255'],
+            'players' => ['integer', 'required', 'min:2', 'max:4'],
+        ]);
+
+        DB::beginTransaction();
+
+        $location_ids = Property::select('id')->get()->pluck('id');
+
+        $game_id = Game::insertGetId([
+            'game_name' => $validated['name'],
+        ]);
+
+        for ($i = 0; $i < $validated['players']; $i++) {
+            Player::insert([
+                'game_id' => $game_id,
+                'icon' => fake()->randomElement(['thimble', 'racecar', 'top_hat', 'battleship']),
+            ]);
+        }
+
+        foreach ($location_ids as $location_id) {
+            GameProperty::insert([
+                'game_id' => $game_id,
+                'location_id' => $location_id,
+            ]);
+        }
+
+        DB::commit();
+
+        return response()->redirectTo('/game/' . $game_id);
+    }
 
     public function getGameState(int $game_id)
     {

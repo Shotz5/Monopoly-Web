@@ -14,9 +14,4 @@ class Player extends Model
     protected $table = 'players';
 
     public $timestamps = false;
-
-    public function properties()
-    {
-        return $this->hasMany(GameProperty::class);
-    }
 }

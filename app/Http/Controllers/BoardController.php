@@ -10,9 +10,14 @@ class BoardController extends Controller
 {
     public function index()
     {
-        return inertia('Index', [
+        return inertia('NewGame');
+    }
+
+    public function game(int $game_id)
+    {
+        return inertia('Game', [
             'boardConfig' => Property::all()->keyBy('location_id'),
-            'gameId' => 1,
+            'gameId' => $game_id,
         ]);
     }
 }

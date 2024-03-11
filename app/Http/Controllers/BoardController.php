@@ -18,7 +18,6 @@ class BoardController extends Controller
     {
         return inertia('Game', [
             'gameState' => Game::getGameState($game_id),
-            'gameId' => $game_id,
         ]);
     }
 }

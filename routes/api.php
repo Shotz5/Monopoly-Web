@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/new-position', [GameController::class, 'newPosition']);
-
 Route::get('/game-state/{id}', [GameController::class, 'getGameState']);
 
 Route::post('/new-game', [GameController::class, 'createNewGame']);
+
+Route::post('/roll-dice', [GameController::class, 'rollDice']);

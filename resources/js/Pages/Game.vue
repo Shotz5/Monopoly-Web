@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-row m-10">
-        <Board :gameState="props.gameState" :position="position" />
+        <Board :gameState="props.gameState" :position="props.gameState.players[CURRENT_PLAYER].position" />
         <div class="flex flex-col">
             <div class="m-2 h-24">
                 <Button :onclick.prevent="rollDice">Dice Roll</Button>
@@ -22,29 +22,21 @@
 
     const props = defineProps({
         gameState: Object,
-        gameId: Number,
     });
 
     const MAX_POSITION = 40;
-    const GAME_ID = props.gameId;
-    const position = ref(1);
+    const CURRENT_PLAYER = props.gameState.players.findIndex((el) => el.id === 1);
+    const CURRENT_PLAYER_ID = props.gameState.players[CURRENT_PLAYER].id;
     const lastRoll = ref(0);
 
     const rollDice = async () => {
-        const roll = await axios.post('/api/new-position', {position: position.value});
+        const response = await axios.post('/api/roll-dice', {player: CURRENT_PLAYER_ID});
 
-        if (roll.data.position < position.value) {
-            lastRoll.value = MAX_POSITION + (roll.data.position - position.value);
+        if (response.data.position < props.gameState.players[CURRENT_PLAYER].position) {
+            lastRoll.value = MAX_POSITION + (response.data.position - props.gameState.players[CURRENT_PLAYER].position);
         } else {
-            lastRoll.value = roll.data.position - position.value
+            lastRoll.value = response.data.position - props.gameState.players[CURRENT_PLAYER].position
         }
-        position.value = roll.data.position;
+        props.gameState.players[CURRENT_PLAYER].position = response.data.position;
     }
-
-    const getGameState = async () => {
-        const gameState = await axios.get(`/api/game-state/${GAME_ID}`);
-        console.log(gameState.data);
-    }
-
-    getGameState();
 </script>

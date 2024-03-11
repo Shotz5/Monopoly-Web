@@ -1,8 +1,8 @@
 <template>
-    <div :id="props.config.property_id" class="grid grid-cols-4 grid-rows-1 text-[12px] text-center">
-        <div class="p-2 [writing-mode:vertical-rl]"><s v-if="props.config.price">M</s>{{ props.config.price }}</div>
-        <div class="p-2 text-lg [writing-mode:vertical-rl]">{{ props.config.property_id == props.position ? '*' : '' }}</div>
-        <div class="p-2 [writing-mode:vertical-rl]">{{ props.config.name }}</div>
+    <div :id="props.config.property.id" class="grid grid-cols-4 grid-rows-1 text-[12px] text-center">
+        <div class="p-2 [writing-mode:vertical-rl]"><s v-if="props.config.property.price">M</s>{{ props.config.property.price }}</div>
+        <div class="p-2 text-lg [writing-mode:vertical-rl]">{{ props.config.property.id == props.position ? '*' : '' }}</div>
+        <div class="p-2 [writing-mode:vertical-rl]">{{ props.config.property.name }}</div>
         <div :class="props.color + (props.color ? ' border-l-2 border-black' : '')"></div>
     </div>
 </template>

@@ -58,27 +58,26 @@ class GameController extends BaseController
         return response()->json($game_state);
     }
 
-    public function newPosition(Request $request)
+    public function rollDice(Request $request)
     {
         $validated = $request->validate([
-            'position' => 'int|required'
+            'player' => 'int|required'
         ]);
 
-        $random_add = (rand(1, 6) + rand(1, 6));
-        $new_position = [
-            'position' => 0,
-            'card' => null,
-        ];
+        $player = Player::findOrFail($validated['player']);
+        $random_add = rand(1, 6) + rand(1, 6);
 
-        if (($validated['position'] + $random_add) > self::MAX_POSITION)
+        if (($player->position + $random_add) > self::MAX_POSITION)
         {
-            $new_position['position'] = $random_add - (self::MAX_POSITION - $validated['position']);
+            $player->position = $random_add - (self::MAX_POSITION - $player->position);
         }
         else
         {
-            $new_position['position'] = $validated['position'] + $random_add;
+            $player->position = $player->position + $random_add;
         }
 
-        return response()->json($new_position, 200);
+        $player->save();
+
+        return response()->json($player, 200);
     }
 }

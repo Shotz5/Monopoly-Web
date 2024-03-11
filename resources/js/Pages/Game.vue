@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-row m-10">
-        <Board :gameState="props.gameState" :position="props.gameState.players[CURRENT_PLAYER].position" />
+        <Board :gameState="props.gameState" />
         <div class="flex flex-col">
             <div class="m-2 h-24">
                 <Button :onclick.prevent="rollDice">Dice Roll</Button>
